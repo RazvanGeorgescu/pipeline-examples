@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "building the app"
                 echo "building the version ${NEW_VERSION}"
-                sh "mvn install"
+                sh "mvn --version"
             }
         }
         stage('test') {
