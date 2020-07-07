@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven'
+    }
     environment {
         NEW_VERSION = '1.2.0'
         SERVER_CREDENTIALS = credentials('test-multi-pipeline')
@@ -9,6 +12,7 @@ pipeline {
             steps {
                 echo "building the app"
                 echo "building the version ${NEW_VERSION}"
+                sh "mvn install"
             }
         }
         stage('test') {
