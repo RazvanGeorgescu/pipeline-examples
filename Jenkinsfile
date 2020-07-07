@@ -36,6 +36,7 @@ pipeline {
             steps {
                 echo "deploying the app"
                 echo "deploying using credentials ${SERVER_CREDENTIALS}"
+                echo "deploying the version ${params.VERSION}"
             }
         }
     }
