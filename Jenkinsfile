@@ -29,13 +29,13 @@ pipeline {
     }
     post {
         always {
-            // always say something about how the build went
+            echo 'this build has executed'
         }
         success {
-            // if the build succeded post something
+            echo 'this build has succeeded'
         }
         failure {
-            // if the build failed post something
+            echo 'this build has failed'
         }       
     }
 }
