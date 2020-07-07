@@ -1,13 +1,20 @@
-node('master') {
-
-  stage('Preparation') {
-    git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-  }
-
-  stage('Build') {
-    withMaven {
-        sh label: '', script: 'mvn -Dmaven.test.failure.ignore clean package'
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                echo "building the app"
+            }
+        }
+        stage('test') {
+            steps {
+                echo "testing the app"
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo "deploying the app"
+            }
+        }
     }
-  }
-  
 }
