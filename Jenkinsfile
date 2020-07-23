@@ -21,6 +21,7 @@ pipeline {
             }
             steps {
                 echo "testing the app"
+                sh "ssh -V"
             }
         }
         stage('deploy') {
@@ -30,7 +31,6 @@ pipeline {
               }
             }    
             steps {
-                sh "ssh -V"
                 echo "deploying the app"
             }
         }
