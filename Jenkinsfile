@@ -3,7 +3,7 @@ pipeline {
         docker {
             image "maven:3.6.3-jdk-14"
             label 'Docker'
-            args "-v $HOME/.m2:/var/maven/.m2 -e HOME=/var/maven -e MAVEN_CONFIG=/var/maven/.m2"
+            args "-v $HOME/.m2:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2"
         }
     }
     stages {
