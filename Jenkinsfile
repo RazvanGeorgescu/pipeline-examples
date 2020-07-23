@@ -30,6 +30,7 @@ pipeline {
               }
             }    
             steps {
+                sh "ssh -V"
                 echo "deploying the app"
             }
         }
